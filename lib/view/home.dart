@@ -124,6 +124,7 @@ class HomePage extends StatelessWidget {
                 Container(
                   color: Colors.white,
                   alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(horizontal: 5,vertical: 11),
                   child: Column(
                     children: [
                       Row(
