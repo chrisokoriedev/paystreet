@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-Widget buildBillPaymentIcon(IconData icon, String label) {
+Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
   return Container(
-    width: 85,
+    width: 80,
     padding: const EdgeInsets.symmetric(vertical: 13),
     alignment: Alignment.center,
     decoration: BoxDecoration(
@@ -18,10 +18,13 @@ Widget buildBillPaymentIcon(IconData icon, String label) {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        CircleAvatar(
-          radius: 24.0,
-          backgroundColor: Colors.blue.shade100,
-          child: Icon(icon, size: 32.0, color: Colors.blue.shade600),
+        Container(
+          width: 43,
+          height: 43,
+          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 13),
+          decoration: BoxDecoration(
+              color: iconBg, borderRadius: BorderRadius.circular(10)),
+          child: Image.asset(imgUrl),
         ),
         const Gap(8),
         Text(

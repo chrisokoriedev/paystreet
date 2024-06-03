@@ -135,25 +135,28 @@ class HomePage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          buildBillPaymentIcon(
-                              Icons.phone_android, 'Buy Airtime'),
-                          buildBillPaymentIcon(Icons.data_usage, 'Buy Data'),
-                          buildBillPaymentIcon(Icons.tv, 'Cable TV'),
-                          buildBillPaymentIcon(
-                              Icons.electric_bike, 'Electricity'),
+                          buildBillPaymentIcon(AppString.airtimeIcon,
+                              AppColor.lightBlue, 'Buy Airtime'),
+                          buildBillPaymentIcon(AppString.dataIcon,
+                              AppColor.lightGreenII, 'Buy Data'),
+                          buildBillPaymentIcon(AppString.cableIcon,
+                              AppColor.lightGreen, 'Cable TV'),
+                          buildBillPaymentIcon(AppString.lightIcon,
+                              AppColor.lightPink, 'Electricity'),
                         ],
                       ),
                       const Gap(20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          buildBillPaymentIcon(
-                              Icons.group, 'Become\n an Agent'),
-                          buildBillPaymentIcon(
-                              Icons.school, 'Education\nPayment'),
-                          buildBillPaymentIcon(
-                              Icons.attach_money, 'Withdraw\nFunds'),
-                          buildBillPaymentIcon(Icons.payment, 'Ask4\nPay'),
+                          buildBillPaymentIcon(AppString.lightIcon,
+                              AppColor.lightPink, 'Become\n an Agent'),
+                          buildBillPaymentIcon(AppString.eduIcon,
+                              AppColor.lightPink, 'Education\nPayment'),
+                          buildBillPaymentIcon(AppString.lightIcon,
+                              AppColor.lightPink, 'Withdraw\nFunds'),
+                          buildBillPaymentIcon(AppString.lightIcon,
+                              AppColor.lightPink, 'Ask4\nPay'),
                         ],
                       ),
                     ],
