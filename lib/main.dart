@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paystreet/view/home.dart';
 
-import 'view/home.dart';
-
 void main() {
   runApp(const MainApp());
 }
