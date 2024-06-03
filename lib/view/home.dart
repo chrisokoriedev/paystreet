@@ -5,6 +5,8 @@ import 'package:paystreet/util/app_string.dart';
 
 import '../util/widget.dart';
 
+final ValueNotifier hideBalace = ValueNotifier<bool>(false);
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -61,37 +63,52 @@ class HomePage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16.0),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.all(16.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 16.0),
+                        const SizedBox(height: 16.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
+                            const Text(
                               'Current Balance',
                               style: TextStyle(
                                   fontSize: 16.0, color: Colors.white),
                             ),
-                            Gap(5),
-                            Icon(
-                              Icons.visibility_outlined,
-                              color: Colors.white,
+                            const Gap(5),
+                            GestureDetector(
+                              onTap: () {
+                                hideBalace.value = !hideBalace.value;
+                              },
+                              child: ValueListenableBuilder(
+                                  valueListenable: hideBalace,
+                                  builder: (context, hideBalace, child) {
+                                    return Icon(
+                                      hideBalace
+                                          ? Icons.visibility_outlined
+                                          : Icons.visibility_off_outlined,
+                                      color: Colors.white,
+                                    );
+                                  }),
                             )
                           ],
                         ),
-                        Gap(10),
-                        Text(
-                          '\$7,860.00',
-                          style: TextStyle(
-                              fontSize: 32.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        Gap(11.0),
-                        Row(
+                        const Gap(8),
+                        ValueListenableBuilder(
+                            valueListenable: hideBalace,
+                            builder: (context, hideBalace, child) {
+                              return Text(
+                                hideBalace ? '**********' : '\$7,860.00',
+                                style: const TextStyle(
+                                    fontSize: 30.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              );
+                            }),
+                        const Gap(11.0),
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             DashboardButton(
@@ -168,7 +185,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                       child: const Text(
                         'See All',
-                        style: TextStyle(fontSize: 13.0,color: Colors.black),
+                        style: TextStyle(fontSize: 13.0, color: Colors.black),
                       ),
                     )
                   ],
