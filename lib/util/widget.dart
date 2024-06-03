@@ -21,7 +21,7 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
         Container(
           width: 43,
           height: 43,
-          padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 13),
+          padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
               color: iconBg, borderRadius: BorderRadius.circular(10)),
           child: Image.asset(imgUrl),
