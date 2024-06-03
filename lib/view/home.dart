@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 40),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 27),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

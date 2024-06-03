@@ -61,7 +61,14 @@ Widget buildTransactionItem(
         style: const TextStyle(
             fontSize: 16, fontWeight: FontWeight.w300, letterSpacing: 1.4),
       ),
-      subtitle: Text(date),
+      subtitle: Text(
+        date,
+        style: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w300,
+            color: Colors.grey,
+            letterSpacing: 1.4),
+      ),
       trailing: Text(
         amount,
         style: const TextStyle(fontSize: 18, letterSpacing: 1.4),
