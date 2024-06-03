@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:paystreet/view/home.dart';
+
+import 'view/home.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,15 +12,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-
-        ),
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
