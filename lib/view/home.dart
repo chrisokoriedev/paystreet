@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:paystreet/util/colors.dart';
+import 'package:paystreet/util/app_string.dart';
+
+import '../util/widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -124,126 +128,66 @@ class HomePage extends StatelessWidget {
                 Container(
                   color: Colors.white,
                   alignment: Alignment.center,
-                  padding: EdgeInsets.symmetric(horizontal: 5,vertical: 11),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 9, vertical: 11),
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildBillPaymentIcon(
+                          buildBillPaymentIcon(
                               Icons.phone_android, 'Buy Airtime'),
-                          _buildBillPaymentIcon(Icons.data_usage, 'Buy Data'),
-                          _buildBillPaymentIcon(Icons.tv, 'Cable TV'),
-                          _buildBillPaymentIcon(
+                          buildBillPaymentIcon(Icons.data_usage, 'Buy Data'),
+                          buildBillPaymentIcon(Icons.tv, 'Cable TV'),
+                          buildBillPaymentIcon(
                               Icons.electric_bike, 'Electricity'),
                         ],
                       ),
+                      const Gap(20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildBillPaymentIcon(Icons.group, 'Become an Agent'),
-                          _buildBillPaymentIcon(
-                              Icons.school, 'Education Payment'),
-                          _buildBillPaymentIcon(
-                              Icons.attach_money, 'Withdraw Funds'),
-                          _buildBillPaymentIcon(Icons.payment, 'Ask4 Pay'),
+                          buildBillPaymentIcon(
+                              Icons.group, 'Become\n an Agent'),
+                          buildBillPaymentIcon(
+                              Icons.school, 'Education\nPayment'),
+                          buildBillPaymentIcon(
+                              Icons.attach_money, 'Withdraw\nFunds'),
+                          buildBillPaymentIcon(Icons.payment, 'Ask4\nPay'),
                         ],
                       ),
                     ],
                   ),
                 ),
                 const SizedBox(height: 16.0),
-                const Text(
-                  'Transactions',
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Transactions',
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.w500),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'See All',
+                        style: TextStyle(fontSize: 13.0),
+                      ),
+                    )
+                  ],
                 ),
-                const SizedBox(height: 16.0),
-                _buildTransactionItem(Icons.shopping_cart, 'Shopping',
-                    '-\$500.00', '12 May 2023, 09:00'),
-                _buildTransactionItem(Icons.transfer_within_a_station,
-                    'Transfer', '+\$2,800.00', '10 May 2023, 10:45'),
-                _buildTransactionItem(Icons.event_seat, 'Concert Ticket',
-                    '-\$170.00', '08 May 2023, 18:30'),
+                const Gap(10.0),
+                buildTransactionItem(AppString.shopingIcon, 'Shopping',
+                    '-\$500.00', '12 May 2023, 09:00', AppColor.lightPurple),
+                buildTransactionItem(AppString.transferIcon, 'Transfer',
+                    '+\$2,800.00', '10 May 2023, 10:45', AppColor.lightGrey),
+                buildTransactionItem(AppString.ticketIcon, 'Concert Ticket',
+                    '-\$170.00', '08 May 2023, 18:30', AppColor.lightGreen),
               ],
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildBillPaymentIcon(IconData icon, String label) {
-    return Card(
-      surfaceTintColor: Colors.white,
-      color: Colors.white,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CircleAvatar(
-            radius: 24.0,
-            backgroundColor: Colors.blue.shade100,
-            child: Icon(icon, size: 32.0, color: Colors.blue.shade600),
-          ),
-          const SizedBox(height: 8.0),
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 12.0),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTransactionItem(
-      IconData icon, String title, String amount, String date) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: Colors.blue.shade100,
-        child: Icon(icon, color: Colors.blue.shade600),
-      ),
-      title: Text(title),
-      subtitle: Text(date),
-      trailing: Text(
-        amount,
-        style: TextStyle(
-          color: amount.startsWith('-') ? Colors.red : Colors.green,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
-}
-
-class DashboardButton extends StatelessWidget {
-  final String title;
-  final IconData iconData;
-  const DashboardButton({
-    super.key,
-    required this.title,
-    required this.iconData,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff45466D),
-        fixedSize: const Size(165, 70),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(fontSize: 16.0, color: Colors.white),
-          ),
-          Icon(iconData, color: Colors.white, size: 30),
-        ],
       ),
     );
   }
