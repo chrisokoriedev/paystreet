@@ -1,4 +1,5 @@
 class AppString {
+  static const avatarIcon = 'assets/icons/avatar.png';
   static const airtimeIcon = 'assets/icons/airtime.png';
   static const dataIcon = 'assets/icons/buydata.png';
   static const cableIcon = 'assets/icons/cable.png';

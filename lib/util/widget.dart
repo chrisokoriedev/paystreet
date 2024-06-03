@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:paystreet/util/colors.dart';
 
 Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
   return Container(
@@ -13,7 +14,7 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
           BoxShadow(
               blurRadius: 10,
               offset: const Offset(0, 1),
-              color: Colors.black12.withOpacity(0.2))
+              color:AppColor.lightGrey.withOpacity(0.5))
         ]),
     child: Column(
       mainAxisSize: MainAxisSize.min,
@@ -48,7 +49,7 @@ Widget buildTransactionItem(
           BoxShadow(
               blurRadius: 10,
               offset: const Offset(0, 1),
-              color: Colors.black12.withOpacity(0.2))
+              color:AppColor.lightGrey.withOpacity(0.5))
         ]),
     child: ListTile(
       leading: Container(

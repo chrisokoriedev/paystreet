@@ -24,10 +24,10 @@ class HomePage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 20,
-                          backgroundColor: Colors.grey.shade300,
-                          child: const Icon(Icons.person, size: 32.0),
+                          backgroundColor: AppColor.lightGrey,
+                          foregroundImage: AssetImage(AppString.avatarIcon),
                         ),
                         const Gap(8),
                         Column(
@@ -112,10 +112,7 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Bill Payments',
-                        style: TextStyle(fontSize: 18.0),
-                      ),
+                      Text('Bill Payments', style: TextStyle(fontSize: 16.0)),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 16.0,
@@ -124,12 +121,12 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 16.0),
+                const Gap(10),
                 Container(
                   color: Colors.white,
                   alignment: Alignment.center,
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 9, vertical: 11),
+                      const EdgeInsets.symmetric(horizontal: 9, vertical: 20),
                   child: Column(
                     children: [
                       Row(
@@ -162,25 +159,20 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 16.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'Transactions',
-                      style: TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.w500),
-                    ),
+                    const Text('Transactions',
+                        style: TextStyle(fontSize: 16.0)),
                     TextButton(
                       onPressed: () {},
                       child: const Text(
                         'See All',
-                        style: TextStyle(fontSize: 13.0),
+                        style: TextStyle(fontSize: 13.0,color: Colors.black),
                       ),
                     )
                   ],
                 ),
-                const Gap(10.0),
                 buildTransactionItem(AppString.shopingIcon, 'Shopping',
                     '-\$500.00', '12 May 2023, 09:00', AppColor.lightPurple),
                 buildTransactionItem(AppString.transferIcon, 'Transfer',
