@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paystreet/util/colors.dart';
 import 'package:paystreet/view/home.dart';
 
 final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);
@@ -10,8 +11,8 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> screens = [
      const HomePage(),
-      Container(color: Colors.green),
-      Container(color: Colors.blue),
+      Container(color: AppColor.lightPurpleII),
+      Container(color: AppColor.lightGreenIII),
     ];
     return Scaffold(
       body: ValueListenableBuilder<int>(
