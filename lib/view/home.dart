@@ -124,18 +124,30 @@ class HomePage extends StatelessWidget {
                 Container(
                   color: Colors.white,
                   alignment: Alignment.center,
-                  child: GridView.count(
-                    shrinkWrap: true,
-                    crossAxisCount: 4,
+                  child: Column(
                     children: [
-                      _buildBillPaymentIcon(Icons.phone_android, 'Buy Airtime'),
-                      _buildBillPaymentIcon(Icons.data_usage, 'Buy Data'),
-                      _buildBillPaymentIcon(Icons.tv, 'Cable TV'),
-                      _buildBillPaymentIcon(Icons.electric_bike, 'Electricity'),
-                      _buildBillPaymentIcon(Icons.group, 'Become an Agent'),
-                      _buildBillPaymentIcon(Icons.school, 'Education Payment'),
-                      _buildBillPaymentIcon(Icons.attach_money, 'Withdraw Funds'),
-                      _buildBillPaymentIcon(Icons.payment, 'Ask4 Pay'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _buildBillPaymentIcon(
+                              Icons.phone_android, 'Buy Airtime'),
+                          _buildBillPaymentIcon(Icons.data_usage, 'Buy Data'),
+                          _buildBillPaymentIcon(Icons.tv, 'Cable TV'),
+                          _buildBillPaymentIcon(
+                              Icons.electric_bike, 'Electricity'),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _buildBillPaymentIcon(Icons.group, 'Become an Agent'),
+                          _buildBillPaymentIcon(
+                              Icons.school, 'Education Payment'),
+                          _buildBillPaymentIcon(
+                              Icons.attach_money, 'Withdraw Funds'),
+                          _buildBillPaymentIcon(Icons.payment, 'Ask4 Pay'),
+                        ],
+                      ),
                     ],
                   ),
                 ),
