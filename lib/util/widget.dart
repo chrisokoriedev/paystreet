@@ -63,7 +63,7 @@ Widget buildTransactionItem(
       title: Text(
         title,
         style: const TextStyle(
-            fontSize: 16, fontWeight: FontWeight.w300, letterSpacing: 1.4),
+            fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 1.4),
       ),
       subtitle: Text(
         date,
