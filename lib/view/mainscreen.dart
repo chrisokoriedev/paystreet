@@ -10,8 +10,9 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> screens = [
-     const HomePage(),
+      const HomePage(),
       Container(color: AppColor.lightPurpleII),
+      Container(color: AppColor.lightBlue),
       Container(color: AppColor.lightGreenIII),
     ];
     return Scaffold(
@@ -37,11 +38,15 @@ class MainScreen extends StatelessWidget {
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.business),
+                icon: Icon(Icons.wallet_outlined),
                 label: '',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.school),
+                icon: Icon(Icons.bar_chart_sharp),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline_outlined),
                 label: '',
               ),
             ],
