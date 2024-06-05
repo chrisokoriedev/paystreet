@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:paystreet/util/colors.dart';
 
 Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
   return Container(
-    width: 80,
+    width: 80.w,
     padding: const EdgeInsets.symmetric(vertical: 13),
     alignment: Alignment.center,
     decoration: BoxDecoration(
@@ -14,15 +15,15 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
           BoxShadow(
               blurRadius: 10,
               offset: const Offset(0, 1),
-              color:AppColor.lightGrey.withOpacity(0.5))
+              color: AppColor.lightGrey.withOpacity(0.5))
         ]),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          width: 43,
-          height: 43,
-          padding: const EdgeInsets.all(12),
+          width: 43.w,
+          height: 43.h,
+          padding: EdgeInsets.all(10.sp),
           decoration: BoxDecoration(
               color: iconBg, borderRadius: BorderRadius.circular(10)),
           child: Image.asset(imgUrl),
@@ -31,7 +32,7 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
         Text(
           label,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 12.sp),
         ),
       ],
     ),
@@ -41,7 +42,7 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
 Widget buildTransactionItem(
     String imgUrl, String title, String amount, String date, Color iconBg) {
   return Container(
-    margin: const EdgeInsets.only(bottom: 14),
+    margin: EdgeInsets.only(bottom: 14.sp),
     decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -49,12 +50,12 @@ Widget buildTransactionItem(
           BoxShadow(
               blurRadius: 10,
               offset: const Offset(0, 1),
-              color:AppColor.lightGrey.withOpacity(0.5))
+              color: AppColor.lightGrey.withOpacity(0.5))
         ]),
     child: ListTile(
       leading: Container(
-        width: 52,
-        height: 52,
+        width: 52.w,
+        height: 52.h,
         padding: const EdgeInsets.symmetric(horizontal: 14),
         decoration: BoxDecoration(
             color: iconBg, borderRadius: BorderRadius.circular(10)),
@@ -62,20 +63,20 @@ Widget buildTransactionItem(
       ),
       title: Text(
         title,
-        style: const TextStyle(
-            fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 1.4),
+        style: TextStyle(
+            fontSize: 16.sp, fontWeight: FontWeight.w400, letterSpacing: 1.4),
       ),
       subtitle: Text(
         date,
-        style: const TextStyle(
-            fontSize: 12,
+        style: TextStyle(
+            fontSize: 12.sp,
             fontWeight: FontWeight.w300,
             color: Colors.grey,
             letterSpacing: 1.4),
       ),
       trailing: Text(
         amount,
-        style: const TextStyle(fontSize: 18, letterSpacing: 1.4),
+        style: TextStyle(fontSize: 18.sp, letterSpacing: 1.4),
       ),
     ),
   );
@@ -96,7 +97,7 @@ class DashboardButton extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xff45466D),
-        fixedSize: const Size(165, 70),
+        fixedSize: Size(165.w, 70.h),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -106,9 +107,9 @@ class DashboardButton extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(fontSize: 16.0, color: Colors.white),
+            style: TextStyle(fontSize: 16.sp, color: Colors.white),
           ),
-          Icon(iconData, color: Colors.white, size: 30),
+          Icon(iconData, color: Colors.white, size: 30.sp),
         ],
       ),
     );

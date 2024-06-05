@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:paystreet/util/colors.dart';
 import 'package:paystreet/util/app_string.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 27),
+            padding: EdgeInsets.symmetric(horizontal: 12.dg, vertical: 27.dm),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,19 +32,19 @@ class HomePage extends StatelessWidget {
                           backgroundColor: AppColor.lightGrey,
                           foregroundImage: AssetImage(AppString.avatarIcon),
                         ),
-                        const Gap(8),
+                        Gap(8.h),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               'Hi, Esther Bukola',
                               style: TextStyle(
-                                  fontSize: 18.0, fontWeight: FontWeight.bold),
+                                  fontSize: 18.sp, fontWeight: FontWeight.bold),
                             ),
                             Text(
                               'Good Evening',
                               style: TextStyle(
-                                  fontSize: 14.0, color: Colors.grey.shade600),
+                                  fontSize: 14.sp, color: Colors.grey.shade600),
                             ),
                           ],
                         ),
@@ -72,10 +73,10 @@ class HomePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
+                            Text(
                               'Current Balance',
                               style: TextStyle(
-                                  fontSize: 16.0, color: Colors.white),
+                                  fontSize: 16.sp, color: Colors.white),
                             ),
                             const Gap(5),
                             GestureDetector(
@@ -95,19 +96,19 @@ class HomePage extends StatelessWidget {
                             )
                           ],
                         ),
-                        const Gap(8),
+                        Gap(8.h),
                         ValueListenableBuilder(
                             valueListenable: hideBalace,
                             builder: (context, hideBalace, child) {
                               return Text(
                                 hideBalace ? '**********' : '\$7,860.00',
-                                style: const TextStyle(
-                                    fontSize: 30.0,
+                                style: TextStyle(
+                                    fontSize: 30.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               );
                             }),
-                        const Gap(11.0),
+                        Gap(11.h),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -124,15 +125,15 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const Gap(16.0),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.dg),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Bill Payments', style: TextStyle(fontSize: 16.0)),
+                      Text('Bill Payments', style: TextStyle(fontSize: 16.sp)),
                       Icon(
                         Icons.arrow_forward_ios,
-                        size: 16.0,
+                        size: 16.sp,
                         color: Colors.grey,
                       ),
                     ],
@@ -179,13 +180,12 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Transactions',
-                        style: TextStyle(fontSize: 16.0)),
+                    Text('Transactions', style: TextStyle(fontSize: 16.sp)),
                     TextButton(
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         'See All',
-                        style: TextStyle(fontSize: 13.0, color: Colors.black),
+                        style: TextStyle(fontSize: 13.sp, color: Colors.black),
                       ),
                     )
                   ],
