@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:paystreet/view/mainscreen.dart';
 
 void main() {
@@ -10,7 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: MainScreen());
+    return ScreenUtilInit(
+        designSize: const Size(414, 896),
+        minTextAdapt: true,
+        builder: (_, __) {
+          return const MaterialApp(
+              debugShowCheckedModeBanner: false, home: MainScreen());
+        });
   }
 }
