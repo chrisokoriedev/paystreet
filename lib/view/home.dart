@@ -109,13 +109,14 @@ class HomePage extends StatelessWidget {
                               );
                             }),
                         Gap(11.h),
-                        const Row(
+                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            DashboardButton(
+                            const DashboardButton(
                                 title: 'Fund Account',
                                 iconData: Icons.file_download_outlined),
-                            DashboardButton(
+                                Gap(14.w),
+                            const DashboardButton(
                                 title: 'Internal Transfer',
                                 iconData: Icons.redo),
                           ],

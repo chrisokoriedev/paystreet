@@ -5,8 +5,8 @@ import 'package:paystreet/util/colors.dart';
 
 Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
   return Container(
-    width: 80.w,
-    padding: const EdgeInsets.symmetric(vertical: 13),
+    width: 75.w,
+    padding:  EdgeInsets.symmetric(vertical: 13.dm),
     alignment: Alignment.center,
     decoration: BoxDecoration(
         color: Colors.white,
@@ -21,8 +21,8 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          width: 43.w,
-          height: 43.h,
+          width: 42.w,
+          height: 42.h,
           padding: EdgeInsets.all(10.sp),
           decoration: BoxDecoration(
               color: iconBg, borderRadius: BorderRadius.circular(10)),
@@ -32,7 +32,7 @@ Widget buildBillPaymentIcon(String imgUrl, Color iconBg, String label) {
         Text(
           label,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: 10.sp),
         ),
       ],
     ),
@@ -93,25 +93,24 @@ class DashboardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xff45466D),
-        fixedSize: Size(165.w, 70.h),
-        shape: RoundedRectangleBorder(
+    return Expanded(
+      child: Container(padding: EdgeInsets.symmetric(vertical: 10.dm),
+        decoration: BoxDecoration(
+          color: const Color(0xff45466D),
           borderRadius: BorderRadius.circular(8.0),
         ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: TextStyle(fontSize: 16.sp, color: Colors.white),
-          ),
-          Icon(iconData, color: Colors.white, size: 30.sp),
-        ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontSize: 14.sp, color: Colors.white),
+            ),
+            Icon(iconData, color: Colors.white, size: 30.sp),
+          ],
+        ),
       ),
     );
+  
   }
 }
